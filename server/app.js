@@ -39,7 +39,6 @@ app.use(cookieParser())
 // app.options("*", cors(corsOptions))
 
 
-
 app.use(cors({
     origin: process.env.PUBLIC_URL?.trim(),
     methods:"GET, PUT, DELETE, POST, PATCH, HEAD",
@@ -81,6 +80,10 @@ mongoose.connection.on("connected", function() {
 
 mongoose.connection.on("disconnected", function() {
     console.log("Mongo DB disconnected")
+})
+
+app.get("/", function(req, res, next){
+    res.send("Bonjour les gens")
 })
 
 const PORT = process.env.PORT || 8800;
