@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../sass/variables.scss";
+
+
+.login  {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .loginContainer {
+        background-color: rgba(245, 159, 0, 0.911);
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+
+        .loginTitle {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .loginForm {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+    
+                label {
+                    font-size: 15px;
+                    color: var(--first-blue);
+                    font-weight: 600;
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    padding: 12px;
+                    font-size: 16px;
+
+                    &::placeholder {
+                        color: gray;
+                        font-size: 15px;
+                        
+                    }
+                }
+
+                button {
+                    background-color: var(--first-blue);
+                    padding: 8px;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin-top: 10px;
+                    color: #fff;
+                    font-weight: 600;
+                    
+                }
+
+                span {
+                    color: var(--first-blue);
+                    font-size: 14px;
+
+                     a  {
+                        color: #fff;
+                        font-size: inherit;
+                        font-weight: bold;
+
+                     }
+                    
+                }
+
+
+    
+            }
+        }
+
+
+    }
+    
+}

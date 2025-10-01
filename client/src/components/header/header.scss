@@ -1,0 +1,185 @@
+@use "sass:map";
+@use "../../sass/config.scss";
+@use "../../sass/variables.scss";
+@use "../../sass/responsive.scss";
+
+
+.header {
+    background-color: var(--first-blue);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        text-size-adjust: 100%;
+        max-width: 1024px;
+        flex-direction: row;
+        gap: 30px;
+        padding: 0 16px;
+
+        .headerLeft  {
+            flex: 1;
+
+            .headerLeftChild {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 5px;
+
+
+                .bigText {
+                    font-weight: bold;
+                    font-size: 45px;
+                    line-height: 1;
+                    @media screen and (max-width: 990px) {
+                        max-width: 500px;
+                    }
+
+                    span {
+                        color: var(--first-yellow)
+                    };
+                }
+    
+                .headerDesc {
+                    font-size: 16px;
+                    font-weight: 500;
+
+                    @media screen and (max-width: 990px) {
+                        max-width: fit-content;
+                    }
+                }
+
+                .buttonContainer {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .primary  {
+                        background-color: var(--first-yellow);
+                        color: var(--first-blue);
+                        border: none;
+                    font-weight: 600;
+                        outline: none;
+                        text-decoration: none;
+                        padding: 8px 16px;
+                        font-size: 16px;
+
+                    }
+
+                    .secondary {
+                        padding: 8px 20px;
+                        border: 1px solid #fff;
+                        color: #fff;
+                        background-color: transparent;
+                        text-decoration: none;
+                        font-weight: 600;
+
+                        font-size: 16px;
+                        transition: 0.32s ease-in-out;
+
+                        &:hover {
+                            background-color: var(--first-yellow);
+                            transition: 0.32s ease-in-out;
+                            border: 1px solid var(--first-yellow);
+                            color: var(--first-blue);
+                        }
+                    }
+                }
+
+                .headerStats {
+                    display: flex;
+                    margin-top: 10px;
+                    align-items: stretch;
+                    gap: 8px;
+                    flex-direction: row;
+
+                    .statItem {
+                        display: flex;
+                        flex-direction: column;
+
+                        h2 {
+                            font-size: 18px;
+                            color: var(--first-yellow);
+                            font-weight: bold;
+                        }
+
+                        p {
+                            max-width: 90px;
+                            line-height: 1.1;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .headerRight {
+            flex: 1;
+
+            @media screen and (max-width: 990px) {
+                display: none;
+            }
+
+            .headerRightChild {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 5px;
+                overflow: hidden;
+
+                .imgStart {
+                    width: 100%;
+                    height: 230px;
+                    object-fit: cover;
+                    cursor: pointer;
+                    transition: 0.4s ease-in-out;
+                    position: relative;
+
+                    &:hover {
+                        transform: scale(1.02);
+                        transition: 0.4s ease-in-out;
+                    }
+
+                    &::after {
+                        background-color: red;
+                        content: "";
+                        position: absolute;
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+    
+                    }
+                }
+
+                .gallery {
+                    display: flex;
+                    align-items: stretch;
+                    flex-direction: row;
+                    gap: 10px;
+
+
+                    img {
+                        width: 33.333%;
+                        object-fit: cover;
+                        flex: 1;
+                        height: auto;
+ 
+                    }
+                }
+    
+              
+                   
+            }
+
+
+        }
+    }
+}

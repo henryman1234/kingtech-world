@@ -1,0 +1,30 @@
+
+.layout {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+
+    // for small screen sm
+    @media screen and (min-width: 640px) {
+        // background-color: rebeccapurple;
+        // padding: 0 32px;
+    }
+    
+    // for medium screen md
+    @media screen and (min-width: 768px) {
+        // background-color: lightblue;
+    }
+
+    // lg
+    @media screen and (min-width: 1024px) {
+        // background-color: lightgreen;
+    }
+
+    // xl
+    @media screen and (min-width: 1280px) {
+        // background-color: darkcyan;
+    }
+
+
+}

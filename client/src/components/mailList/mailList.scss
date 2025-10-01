@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../../sass/config.scss";
+@use "../../sass/variables.scss";
+@use "../../sass/responsive.scss";
+
+.mailList {
+    background-color: variables.$first-blue;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 50px;
+
+    .mailTitle {
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .mailDesc {
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .mailInputContainer > input {
+        width: 300px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        font-size: 16px;
+        margin-right: 10px;
+
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+
+    .mailInputContainer > button {
+        color: #fff;
+        background-color: variables.$second-blue;
+        padding: 10px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        
+    }
+
+}

@@ -1,0 +1,67 @@
+@use "sass:math";
+@use "../../sass/config.scss";
+@use "../../sass/responsive.scss";
+@use "../../sass/variables.scss";
+
+@function fluid-font($min-font-size, $max-font-size, $min-viewport-width,$max-viewport-width) {
+    $slope: calc(($max-font-size - $min-font-size)/($max-viewport-width - $min-viewport-width));
+    $intercept: $min-font-size - ($slope * $min-viewport-width);
+    $prefered-value: #{$intercept} +  #{$slope * 100vw};
+    @return clamp(#{$min-font-size}, #{$prefered-value}, #{$max-font-size})
+};
+
+@function color-variant ($color, $weight) {
+    @if ($weight == 0) {
+        @return $color;
+    } @else if ($weight > 0) {
+        @return lighten ($color, $weight*1%);
+    } @else {
+        @return darken($color, abs($weight)*1%);
+    }
+}
+
+
+.fp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  max-width: 1024px;
+    
+    .fpItem {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .fpCity {
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        .fpName {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .fpRating > button {
+            background-color: variables.$first-blue;
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 3px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .fpRating > span {
+            font-size: 15px;
+        }
+    }
+}
+

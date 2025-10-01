@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../sass/variables.scss";
+
+.propertyList {
+
+    .plist {
+        max-width: 1024px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .plistItem {
+            overflow: hidden;
+            cursor: pointer;
+            height: 220px;
+            flex: 1;
+            padding-bottom: 50px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            border-radius: 10px;
+
+            }
+
+            .plistTitles {
+                h1 {
+                    font-size: 18px;
+                }
+
+                h2  {
+                    font-size: 15px;
+
+                }
+            }
+        }
+    }
+
+
+}
