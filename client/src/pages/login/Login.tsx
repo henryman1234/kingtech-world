@@ -10,6 +10,7 @@ const Login = function () {
     const navigate = useNavigate()
     const {currentUser, updateUser} = useContext(AuthContext) as AuthContextType
     const apiUrl = import.meta.env.VITE_API_URL;
+    console.log(apiUrl)
 
 
     const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
