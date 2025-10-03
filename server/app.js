@@ -68,8 +68,8 @@ app.use(function (err, req, res, next){
 const connect = async function () {
     try {
        await mongoose.connect(process.env.MONGO_DB_URI?.trim(), {
-           bufferTimeoutMS: 30000,
-         )
+           bufferTimeoutMS: 30000
+       })
        console.log("Mongo DB is already connected") 
     } catch (err) {
         throw err
