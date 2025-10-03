@@ -40,7 +40,7 @@ app.use(cookieParser())
 
 
 app.use(cors({
-    origin: process.env.PUBLIC_URL?.trim(),
+    origin: process.env.PUBLIC_URL?.trim() || "*",
     methods:"GET, PUT, DELETE, POST, PATCH, HEAD",
     credentials: true,
     optionsSuccessStatus: 204,

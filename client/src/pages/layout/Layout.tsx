@@ -37,7 +37,6 @@ const RequireAuthLayout = function () {
         return <Navigate to="/login"/>
         } else {
         return (
-
             <div className="layout">
                 {showOTPModal &&  (
                     <OTPModal setShowOTPModal={setShowOTPModal}/>

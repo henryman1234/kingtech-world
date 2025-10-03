@@ -40,8 +40,8 @@
                 input {
                     border: none;
                     outline: none;
-                    padding: 15px;
-                    font-size: 18px;
+                    padding: 14px;
+                    font-size: 20px;
 
                     &::placeholder {
                         color: gray;
@@ -52,7 +52,7 @@
 
                 button {
                     background-color: var(--first-blue);
-                    padding: 8px;
+                    padding: 10px;
                     width: 100%;
                     border: none;
                     outline: none;
