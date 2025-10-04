@@ -13,11 +13,11 @@ const Home = function () {
     const [showOTPModal, setShowOTPModal] = useState(false)
 
     const items = [
-        {header: "C'est quand la prochaine rentrée?", content: " Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024"},
-        {header: "Comment s'inscrire ?", content: "Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024"},
-        {header: "Combien de filières ", content: "Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024"},
-        {header: "Peut t'on faire les cours du soir ?", content: "Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024"},
-        {header: "Quelle est la procédure d'inscription ?", content: "Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024Bonjour les gens, je suis Henry Nomo, developpeur web certifiée depuis 2024"},
+        {header: "C'est quand la prochaine rentrée?", content: "La prochaine rentrée debutera en Octobre 2025"},
+        {header: "Comment s'inscrire ?", content: "Vous pouvez nous contacter par Eamil ou par Téléphone ou vosu rendre directement dans notre centre situé à Yaoundé Tam-Tam Weekend"},
+        {header: "Combien de filières ", content: "Nous disposons de plusieurs , cela depend de ce que vous voulez apprendre , en partant de l'Informatique jusqu'au filières techniques, nosu sommes là pour vous accompagner dans votre formation "},
+        {header: "Peut t'on faire les cours du soir ?", content: "Vous pouvez faire les cours du soir, en fonction de votre filière choisie"},
+        {header: "Quelle est la procédure d'inscription ?", content: "Contactez nous pour plus d'informations ou rendez-vous sur nos différents réseaux sociaux"},
     ]
 
     return (
