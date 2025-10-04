@@ -78,9 +78,8 @@ const ProfileUpdatePage = function () {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
-                    Accept: "application/json",
+                    Accept: "application/json; charset=utf-8",
                 },
-
                 credentials: "include",
                 body: JSON.stringify(dataToUpdate)
 
