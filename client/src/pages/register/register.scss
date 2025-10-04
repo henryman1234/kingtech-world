@@ -4,7 +4,7 @@
 
 
 .login  {
-    background-color: rgb(4, 0, 24);
+    background-color:  var(--first-blue);
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -33,7 +33,7 @@
                 gap: 4px;
     
                 label {
-                    font-size: 15px;
+                    font-size: 16px;
                     color: rgb(4, 0, 24);
                     font-weight: 600;
                 }
