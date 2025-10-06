@@ -15,10 +15,10 @@ export const verifyToken = async function (req, res, next) {
                 return next(createError(400, "Token is not valid!"))
             }
             req.user = user
-            next()
+            return next()
         })
     } catch (err) {
-        next(err)
+        return next(err)
     }
 }
 
@@ -32,7 +32,7 @@ export const verifyUser = async function (req, res, next) {
             }
         })
     } catch (err) {
-        next(err)
+        return next(err)
     }
 }
 
@@ -47,6 +47,6 @@ export const verifyAdmin = async function (req, res, next) {
             }
         })
     } catch (err) {
-        next(err)
+       return next(err)
     }
 }
