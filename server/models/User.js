@@ -3,12 +3,10 @@ import mongoose, { Schema } from "mongoose";
 const UserSchema =  new Schema({
     username: {
         type: String,
-        unique: true,
         max: 10,
     },
     email: {
         type: String,
-        required: true,
     },
     password: {
         type: String,
@@ -17,7 +15,6 @@ const UserSchema =  new Schema({
     },
     training: {
         type: String,
-        required: true
     },
     image: {
         type: String,
