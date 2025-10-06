@@ -15,11 +15,11 @@ const Register = function () {
     const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
-        const username = formData.get("username")
-        const matricule = formData.get("matricule")
-        const email = formData.get("email")
-        const password = formData.get("password")
-        const training = formData.get("training")
+        const username = String(formData.get("username"))?.trim()
+        const matricule = String(formData.get("matricule"))?.trim()
+        const email = String(formData.get("email"))?.trim()
+        const password = String(formData.get("password"))?.trim()
+        const training = String(formData.get("training"))?.trim()
         setError("")
         setIsLoading(true)
 

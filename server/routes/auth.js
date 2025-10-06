@@ -30,11 +30,11 @@ router.post("/register", async function (req, res, next) {
 
 router.post("/login", async function (req, res, next) {
     try {
-        const user = await User.findOne({ username: req.body.username })
+        const user = await User.findOne({ username: req.body.username?.trim() })
         if (!user) {
             return next(createError(404, "Cet utilisateur n'existe pas"))
         }
-        const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password)
+        const isPasswordCorrect = await bcrypt.compare(req.body.password?.trim(), user.password)
         if (!isPasswordCorrect) {
             return next(createError(400, "Mot de passe inavalide!"))
         }

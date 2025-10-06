@@ -16,8 +16,8 @@ const Login = function () {
     const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
-        const username = formData.get("username")
-        const password =  formData.get("password")
+        const username = String(formData.get("username"))?.trim()
+        const password =  String(formData.get("password"))?.trim()
         setError("")
         setIsLoading(true)
 
