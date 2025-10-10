@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./subscribe.scss";
+import Swal from "sweetalert2"
 
 const Subscribe = function () {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,6 +25,11 @@ const Subscribe = function () {
 
             if (res.success) {
                 console.log("Success", res)
+                Swal.fire({
+                    title: "Succès",
+                    text:"Message envoyé!",
+                    icon: "success"
+                })
                 setMessage(res.message)
                 e.currentTarget?.reset()
             } 
