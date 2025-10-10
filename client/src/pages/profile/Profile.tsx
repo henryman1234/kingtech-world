@@ -29,7 +29,7 @@ const Profile = function () {
 
                 <div className="avatar">
                     <div className="imgContainer">
-                        <img src ={ Avatar} className="avatarImg" alt="Image de profil" />
+                        <img src ={currentUser?.image ||  Avatar} className="avatarImg" alt="Image de profil" />
                     </div>
                     <h3 className="avatarName">{currentUser?.username}</h3>
                     <p className="avatarEmail">{currentUser?.email}</p>

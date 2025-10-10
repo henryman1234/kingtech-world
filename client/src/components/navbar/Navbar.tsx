@@ -66,7 +66,7 @@ const Navbar = function ({setShowOTPModal}: OTPSetterType) {
                 {/* MOBILE MENU */}
                 <div className="mobileMenu">
                      {currentUser ? <div className="mobileMenuItem">
-                        <img onClick={toggle} src={DefaultImage} alt="Logo" className="mobileImage" />
+                        <img onClick={toggle} src={currentUser?.image || DefaultImage} alt="Logo" className="mobileImage" />
                         
                         {state && <div className="mobileDrop">
                             <Link onClick={toggle} to="/profile">Mon Profile</Link>
@@ -92,7 +92,7 @@ const Navbar = function ({setShowOTPModal}: OTPSetterType) {
 
                         <span style={{fontWeight: "bold", cursor: "pointer"}}>{currentUser?.username}</span>
                         
-                        <img  src={DefaultImage} alt="Logo" className="desktopImage" />
+                        <img  src={currentUser?.image || DefaultImage} alt="Logo" className="desktopImage" />
                     </div> : <div className="not-loggedIn">
                             <Link to= "/contacts" className="contact">Contacts</Link>
                             <Link to="/login" className="connect">Se connecter</Link>

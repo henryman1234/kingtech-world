@@ -3,17 +3,19 @@ import "./profileUpdatePage.scss";
 import Avatar from "../../../public/images/noavatar.jpg"
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
+
 
 const ProfileUpdatePage = function () {
 
     const {currentUser, updateUser} = useContext(AuthContext) as AuthContextType
     const [error, setError] = useState<string | null>(null)
     const [isUpdating, setIsUpdating] = useState(false)
-
+    const [image, setImage] = useState(currentUser?.image)
     const navigate = useNavigate()
+    const apiUrl = import.meta.env.VITE_API_URL
 
     const {id} = useParams()
-    console.log(id)
 
     // Type for the data
     type UserDataType =  {
@@ -50,6 +52,8 @@ const ProfileUpdatePage = function () {
 
     // Change the inputs
     const handleChange = function (e: React.ChangeEvent<HTMLInputElement>) {
+        setError("")
+        setIsUpdating(true)
         const {name, value} = e.target
         setFormInputs(function(prev) {
             return ({...prev, [name]: value})
@@ -70,8 +74,11 @@ const ProfileUpdatePage = function () {
             return acc
         }, {})
 
-        const apiUrl = import.meta.env.VITE_API_URL
 
+        // Ajoute l'image si elle a été changée
+        if (image && image !== userData?.image) {
+            dataToUpdate.image = image
+        }
 
         try {
             const  res = await fetch(`${apiUrl}/api/users/${id}`, {
@@ -107,10 +114,22 @@ const ProfileUpdatePage = function () {
 
                 <div className="avatar">
                     <div className="imgContainer">
-                        <img src ={ Avatar} className="avatarImg" alt="Image de profil" />
+                        <img src ={image || Avatar} className="avatarImg" alt="Image de profil" />
                     </div>
                     <h3 className="avatarName">{currentUser?.username}</h3>
                     <p className="avatarEmail">{currentUser?.email}</p>
+ 
+                    {/* Widget to update image */}
+                    <UploadWidget 
+                        uwConfig={{
+                            uploadPreset: "kingtech-world",
+                            cloudName: "dkeedx8l1",
+                            multiple: false,
+                            maxImageFileSize: 2000000
+                        }}
+                        setImage={setImage}
+                    
+                    />
 
                 </div>
 
