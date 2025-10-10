@@ -1,25 +1,17 @@
 import{ useContext, useState } from "react";
 import "./profile.scss";
 import Avatar from "../../../public/images/noavatar.jpg"
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
 
 const Profile = function () {
 
     const {currentUser} = useContext(AuthContext) as AuthContextType
+    const navigate  = useNavigate()
 
-    const [details , setDetails] = useState({
-        username: "",
-        email: "",
-        password: "",
-        training: "",
-    })
-
-    const handleChange = function (e: React.ChangeEvent<HTMLInputElement> ) {
-        const {name, value} = e?.target
-        setDetails(function (prev){
-            return  {...prev, [name]: value }
-        })
+    const handleUpdatePage = function () {
+        navigate(`/profileUpdatePage/${currentUser?._id}`)
+        window.location.reload()
     }
 
 
@@ -62,7 +54,7 @@ const Profile = function () {
                         </div>
 
                         <div className="formItem">
-                            <Link className="update" to={`/profileUpdatePage/${currentUser?._id}`} >Modifier</Link>
+                            <button onClick={handleUpdatePage} className="update"  >Modifier</button>
                         </div>
 
                     </form>

@@ -125,7 +125,7 @@ const ProfileUpdatePage = function () {
                             uploadPreset: "kingtech-world",
                             cloudName: "dkeedx8l1",
                             multiple: false,
-                            maxImageFileSize: 2000000
+                            maxImageFileSize: 3000000
                         }}
                         setImage={setImage}
                     
